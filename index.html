@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Snake Game using HTML and Javascript - Studytonight</title>
+    <title>Snake game</title>
     <style>
         .game-box {
             text-align:center;   
@@ -18,13 +18,20 @@
   <body>
     <div class="game-box"><canvas id="canvas" width="400" height="400"></canvas></div>
     <div class="game-info">
-        <h2>PC Snake Game </h2>
-      <h3>Press "space" to resume/pause</h3>
-		<h3>Press Arrow keys to navigate</h3>
+        <h2>Snake Game</h2>
+		<h3>Press "space" to resume/pause</h3>
+		<button onclick="keyDownEventkey(32)">Space</button>		
+		<h3>Press Arrow keys to navigate</h3>	
+			
+			  <button onclick="keyDownEventkey(38)">UP</button><br><br>
+			  <button onclick="keyDownEventkey(37)">LEFT</button>
+			  <button onclick="keyDownEventkey(39)">RIGHT</button><br><br>
+			  <button onclick="keyDownEventkey(40)">DOWN</button>
+		
         <p id="game-status"></p>
         <p id="game-score"></p>
     </div>
-
+	
     <script>
       var canvas, ctx, gameControl, gameActive;
       // render X times per second
@@ -183,6 +190,38 @@
             break;
         }
       }
+	   
+	   
+	   function keyDownEventkey(e) {
+        switch (e) {
+          case 37:
+            nextX = -1;
+            nextY = 0;
+            break;
+          case 38:
+            nextX = 0;
+            nextY = -1;
+            break;
+          case 39:
+            nextX = 1;
+            nextY = 0;
+            break;
+          case 40:
+            nextX = 0;
+            nextY = 1;
+            break;
+          case 32:
+            if(gameActive == true) {
+                pauseGame();
+            }
+            else {
+                gameControl = startGame(x);
+            }
+            break;
+        }
+      }	 
+	  
+	  
     </script>
   </body>
 </html>
