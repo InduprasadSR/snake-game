@@ -13,20 +13,40 @@
             font-family:arial;
             line-height:24px;
         }
+		
+		.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
     </style>
   </head>
   <body>
-    <div class="game-box"><canvas id="canvas" width="400" height="400"></canvas></div>
+    <div class="game-box"><canvas id="canvas" width="324" height="324"></canvas></div>
     <div class="game-info">
         <h2>Snake Game</h2>
 		<h3>Press "space" to resume/pause</h3>
-		<button onclick="keyDownEventkey(32)">Space</button>		
+		<button onclick="keyDownEventkey(32)" class="button">Resume/Pause</button>		
 		<h3>Press Arrow keys to navigate</h3>	
 			
-			  <button onclick="keyDownEventkey(38)">UP</button><br><br>
-			  <button onclick="keyDownEventkey(37)">LEFT</button>
-			  <button onclick="keyDownEventkey(39)">RIGHT</button><br><br>
-			  <button onclick="keyDownEventkey(40)">DOWN</button>
+			  <button onclick="keyDownEventkey(38)" class="button">UP</button><br><br>
+			  <button onclick="keyDownEventkey(37)" class="button">LEFT</button>
+			  <button onclick="keyDownEventkey(39)" class="button">RIGHT</button><br><br>
+			  <button onclick="keyDownEventkey(40)" class="button">DOWN</button>
 		
         <p id="game-status"></p>
         <p id="game-score"></p>
@@ -77,7 +97,7 @@
       }
 
       // game world
-      var gridSize = (tileSize = 20); // 20 x 20 = 400
+      var gridSize = (tileSize = 18); // 20 x 20 = 400
       var nextX = (nextY = 0);
 
       // snake
