@@ -38,18 +38,17 @@
   <body>
     <div class="game-box"><canvas id="canvas" width="324" height="324"></canvas></div>
     <div class="game-info">
-        <h2>Snake Game</h2>
-		<h3>Press "space" to resume/pause</h3>
-		<button onclick="keyDownEventkey(32)" class="button">Resume/Pause</button>		
-		<h3>Press Arrow keys to navigate</h3>	
+        <h2>Snake Game</h2><h3>Press "space" to resume/pause,Press Arrow keys to navigate</h3>	
+<p id="game-status"></p>
+        <p id="game-score"></p>		
+		<button onclick="keyDownEventkey(32)" class="button">Resume/Pause</button><br>		
 			
-			  <button onclick="keyDownEventkey(38)" class="button">UP</button><br><br>
+			  <button onclick="keyDownEventkey(38)" class="button">UP</button><br>
 			  <button onclick="keyDownEventkey(37)" class="button">LEFT</button>
-			  <button onclick="keyDownEventkey(39)" class="button">RIGHT</button><br><br>
+			  <button onclick="keyDownEventkey(39)" class="button">RIGHT</button><br>
 			  <button onclick="keyDownEventkey(40)" class="button">DOWN</button>
 		
-        <p id="game-status"></p>
-        <p id="game-score"></p>
+        
     </div>
 	
     <script>
